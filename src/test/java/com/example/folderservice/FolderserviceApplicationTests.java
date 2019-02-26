@@ -19,9 +19,9 @@ public class FolderserviceApplicationTests {
 	public void contextLoads() {
 	}
 
-	@Test
-	public void canCreateFile(){
-		File file = new File("Important Doc", ".java", 3);
-		fileRepository.save(file);
-	}
+//	@Test
+//	public void canCreateFile(){
+//		File file = new File("Important Doc", ".java", 3);
+//		fileRepository.save(file);
+//	}
 }
