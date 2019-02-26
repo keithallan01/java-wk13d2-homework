@@ -4,7 +4,7 @@ package com.example.folderservice.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "file")
+@Table(name = "files")
 public class File {
 
     @Id
@@ -20,10 +20,24 @@ public class File {
     @Column(name = "size")
     private int size;
 
-    public File(String name, String ext, int size) {
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public File(String name, String ext, int size, User user) {
         this.name = name;
         this.ext = ext;
         this.size = size;
+        this.user = user;
     }
 
     public File() {
