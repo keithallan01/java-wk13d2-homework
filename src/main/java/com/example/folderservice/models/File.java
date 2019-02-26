@@ -21,23 +21,24 @@ public class File {
     private int size;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "folder_id", nullable = false)
+    private Folder folder;
 
 
-    public User getUser() {
-        return user;
+    public Folder getFolder() {
+        return folder;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setFolder(Folder folder) {
+        this.folder = folder;
     }
 
-    public File(String name, String ext, int size, User user) {
+
+    public File(String name, String ext, int size, Folder folder) {
         this.name = name;
         this.ext = ext;
         this.size = size;
-        this.user = user;
+        this.folder = folder;
     }
 
     public File() {
@@ -74,4 +75,6 @@ public class File {
     public void setSize(int size) {
         this.size = size;
     }
+
+
 }

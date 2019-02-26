@@ -20,17 +20,5 @@ public class FileController {
     @Autowired
     FileRepository fileRepository;
 
-    @Autowired
-    UserRepository userRepository;
-
-    @GetMapping("{id}")
-    public Optional<File> getFile(@PathVariable Long id){
-        return fileRepository.findById(id);
-    }
-
-    @GetMapping
-    public List<File> getAllEmployees(){
-        return fileRepository.findAll();
-    }
 
 }
